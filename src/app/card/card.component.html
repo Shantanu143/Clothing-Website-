@@ -1,0 +1,43 @@
+<h1 class="mainHeading__title">Products</h1>
+<div class="d-flex flex-wrap justify-content-around my-5">
+  <div class="container page-wrapper">
+    <div class="page-inner">
+      <div class="row">
+        <div class="el-wrapper" *ngFor="let productInfo of productData">
+          <div class="box-up">
+            <img
+              class="img"
+              src="{{ productInfo.image }}"
+              alt=""
+              width="180px"
+            />
+            <div class="img-info">
+              <div class="info-inner">
+                <span class="p-name">{{ productInfo.title }} </span>
+                <span class="p-company">{{ productInfo.category }} </span>
+              </div>
+              <div class="a-size">
+                Rating :<span class="size">
+                  {{ productInfo.rating.rate }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-down">
+            <div class="h-bg">
+              <div class="h-bg-inner"></div>
+            </div>
+
+            <a class="cart" routerLink="productPage/{{productInfo.id}}">
+              <span class="price">$ {{ productInfo.price }}</span>
+              <span class="add-to-cart">
+                <span class="txt">Add in cart</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<!-- content -->
+<section class="py-5 my-xl-5">
+  <div class="container" *ngFor="let productInfo of productData">
+    <div class="row gx-5" *ngIf="productInfo.id == userId">
+      <aside class="col-lg-6">
+        <div class="border rounded-4 mb-3 d-flex justify-content-center">
+          <img
+            style="width: 300px; max-height: 100vh; margin: auto"
+            class="rounded-4 fit"
+            src="{{ productInfo.image }}"
+          />
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+          <img class="rounded-2 small__card" src="{{ productInfo.image }}" />
+          <img class="rounded-2 small__card" src="{{ productInfo.image }}" />
+          <img class="rounded-2 small__card" src="{{ productInfo.image }}" />
+        </div>
+      </aside>
+      <main class="col-lg-6">
+        <div class="ps-lg-3 mainHeading__description">
+          <h4 class="text-dark mainHeading__title">
+            {{ productInfo.title }}
+          </h4>
+
+          <div class="mt-3 mb-3">
+            <span class="h5">&#8377; {{ productInfo.price }} </span>
+            <span class="text-muted">/Per Products</span>
+          </div>
+
+          <p>
+            {{ productInfo.description }}
+          </p>
+
+          <div class="row">
+            <dt class="col-3">Type:</dt>
+            <dd class="col-9">{{ productInfo.category }}</dd>
+<!-- 
+            <dt class="col-3">Color</dt>
+            <dd class="col-9">{{ colorOfProduct }}</dd>
+
+            <dt class="col-3">Material</dt>
+            <dd class="col-9">{{ materialOfProduct }}</dd>
+
+            <dt class="col-3">Brand</dt>
+            <dd class="col-9">{{ brandOfProduct }}</dd> -->
+          </div>
+
+          <hr />
+
+          <div class="row mb-4">
+            <div class="col-md-4 col-6">
+              <label class="mb-2">Size</label>
+              <select
+                class="form-select border border-secondary"
+                style="height: 35px"
+              >
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+              </select>
+            </div>
+          </div>
+          <button class="cta m-3">Buy Now</button>
+          <button class="cta">Add To Cart</button>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+<!-- content -->
